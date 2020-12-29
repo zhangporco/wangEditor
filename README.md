@@ -1,71 +1,73 @@
 # wangEditor
 
-> 通知：**wangEditor 新版**已启动研发，对开源感兴趣的，可以申请加入研发小组。请加 QQ 群 710646022 ，并私聊群主即可。
+![build badge](https://github.com/wangeditor-team/wangEditor/workflows/build/badge.svg)
 
-## 介绍
+轻量级 web 富文本编辑器，配置方便，使用简单。
 
-**wangEditor** —— 轻量级 web 富文本编辑器，配置方便，使用简单。支持 IE10+ 浏览器。
+- 官网 [www.wangEditor.com](http://www.wangeditor.com/)
+- 文档 [www.wangEditor.com/doc](http://www.wangeditor.com/doc/)
 
-- 官网：[www.wangEditor.com](http://www.wangeditor.com/)
-- 文档：[www.kancloud.cn/wangfupeng/wangeditor3/332599](http://www.kancloud.cn/wangfupeng/wangeditor3/332599)
-- 源码：[github.com/wangfupeng1988/wangEditor](https://github.com/wangfupeng1988/wangEditor) （欢迎 star）
+![](./docs/imgs/demo.png)
 
-![图片](http://images2015.cnblogs.com/blog/138012/201705/138012-20170530202905633-1840158981.png)
+当前是 `v4` 版本。想继续使用 `v3` 版本看[这里](http://www.wangeditor.com/doc/pages/01-%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8/08-%E4%BD%BF%E7%94%A8V3%E7%89%88%E6%9C%AC.html)。
 
-*查看 v2 版本的代码和文档点击[这里](https://github.com/wangfupeng1988/wangEditor/tree/v2)*
+## 浏览器兼容性
 
+兼容常见的 PC 浏览器：Chrome，Firefox，Safar，Edge，QQ 浏览器，IE11 。
 
-## 下载
+不支持移动端。
 
-- 直接下载：[https://github.com/wangfupeng1988/wangEditor/releases](https://github.com/wangfupeng1988/wangEditor/releases)
-- 使用`npm`下载：`npm install wangeditor` （注意 `wangeditor` 全部是**小写字母**）
-- 使用`bower`下载：`bower install wangEditor` （前提保证电脑已安装了`bower`）
-- 使用CDN：[//unpkg.com/wangeditor/release/wangEditor.min.js](https://unpkg.com/wangeditor/release/wangEditor.min.js)
+## 基本使用
 
+### NPM
+```bash
+npm i wangeditor --save
+```
+安装后几行代码即可创建一个编辑器：
 
-## 使用
-
-```javascript
-var E = window.wangEditor
-var editor = new E('#div1')
-editor.create()
+```js
+import E from "wangeditor";
+const editor = new E("#div1");
+editor.create();
+```
+### CDN
+```html
+<script type="text/javascript" src="https://unpkg.com/wangeditor/dist/wangEditor.min.js"></script>
+<script type="text/javascript">
+  const E = window.wangEditor
+  const editor = new E('#div1')
+  // 或者 const editor = new E(document.getElementById('div1'))
+  editor.create()
+</script>
 ```
 
-
-## 运行 demo
-
-- 下载源码 `git clone git@github.com:wangfupeng1988/wangEditor.git`
-- 安装或者升级最新版本 node（最低`v6.x.x`）
-- 进入目录，安装依赖包 `cd wangEditor && npm i`
-- 安装包完成之后，windows 用户运行`npm run win-example`，Mac 用户运行`npm run example`
-- 打开浏览器访问[localhost:3000/index.html](http://localhost:3000/index.html)
-- 用于 React、vue 或者 angular 可查阅[文档](http://www.kancloud.cn/wangfupeng/wangeditor3/332599)中[其他](https://www.kancloud.cn/wangfupeng/wangeditor3/335783)章节中的相关介绍
+更多使用方法，可参考[文档](http://www.wangeditor.com/doc/)。
 
 ## 交流
 
-### QQ 群
+加入 QQ 群
+- 164999061（人已满）
+- 710646022（人已满）
+- 901247714
 
-以下 QQ 群欢迎加入交流问题（可能有些群已经满员）
+提交 bug 或建议
+- [github issues](https://github.com/wangeditor-team/wangeditor/issues) 提交问题
 
-- 164999061
-- 710646022
+## 开发团队
 
-### 提问
+有专业[开发团队](http://www.wangeditor.com/doc/#%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98)维护，非个人单兵作战。
 
-注意，作者只受理以下几种提问方式，其他方式直接忽略
+想加入 wangEditor 研发团队，可申请加入 QQ 群，然后私聊群主。
 
-- 直接在 [github issues](https://github.com/wangfupeng1988/wangEditor/issues) 提交问题
-- 去[知乎](https://www.zhihu.com/)提问，并邀请[作者](https://www.zhihu.com/people/wang-fu-peng-54/activities)来回答
-- 去[segmentfault](https://segmentfault.com)提问，并邀请[作者](https://segmentfault.com/u/wangfupeng1988)来回答
+## 开发文档
 
-每次升级版本修复的问题记录在[这里](./ISSUE.md)
+[开发文档](./docs/README.md)，供申请加入开发团队，或者对源码感兴趣的用户阅读。
 
-## 关于作者
+加入开发团队后，还会有更详细的开发流程、规划、沟通机制。内容太多，这里不公开。
 
-- 关注作者的博客 - 《[深入理解javascript原型和闭包系列](http://www.cnblogs.com/wangfupeng1988/p/4001284.html)》《[深入理解javascript异步系列](https://github.com/wangfupeng1988/js-async-tutorial)》《[换个思路学习nodejs](https://github.com/wangfupeng1988/node-tutorial)》《[CSS知多少](http://www.cnblogs.com/wangfupeng1988/p/4325007.html)》 
+## 为我们加油
 
-如果你感觉有收获，欢迎给我打赏 ———— 以激励我更多输出优质开源内容
+你的支持，将激励我们输出更多优质内容！
 
-![微信打赏](https://what-is-fe.gitee.io/images/wechat-pay.jpeg)
-![支付宝打赏](https://what-is-fe.gitee.io/images/ali-pay.jpeg)
-
+![](./docs/imgs/wechat-pay.jpeg)
+![](./docs/imgs/ali-pay.jpeg)
